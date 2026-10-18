@@ -1,0 +1,40 @@
+$ python procedural.py 1 -5 4
+Уравнение: 1*x^4 + -5*x^2 + 4 = 0
+Дискриминант: 9
+Действительные корни: -2, -1, 1, 2
+
+$ python object_oriented.py 1 -2 1
+Уравнение: 1*x^4 + -2*x^2 + 1 = 0
+Дискриминант: 0
+Действительные корни: -1, 1
+
+$ python functional.py 1 0 1
+Уравнение: 1*x^4 + 0*x^2 + 1 = 0
+Дискриминант: -4
+Действительных корней нет.
+
+$ python procedural.py 0 0 0
+Уравнение: 0*x^4 + 0*x^2 + 0 = 0
+Дискриминант: 0
+Подходит любое действительное число.
+
+$ python procedural.py 1 bad 4
+Ошибка: введите конечное действительное число.
+B = Ошибка: введите конечное действительное число.
+B = Уравнение: 1*x^4 + -5*x^2 + 4 = 0
+Дискриминант: 9
+Действительные корни: -2, -1, 1, 2
+
+$ python -m unittest discover -v
+Ошибка: введите конечное действительное число.
+Ошибка: введите конечное действительное число.
+Ошибка: введите конечное действительное число.
+Ошибка: введите конечное действительное число.
+test_all_paradigms (test_equations.EquationTests.test_all_paradigms) ... ok
+test_invalid_argument_is_retried (test_equations.EquationTests.test_invalid_argument_is_retried) ... ok
+test_keyboard_and_finite_values (test_equations.EquationTests.test_keyboard_and_finite_values) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+OK

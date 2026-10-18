@@ -1,0 +1,25 @@
+$ python main.py --file demo_tasks.json list
+Список задач пуст.
+
+$ python main.py --file demo_tasks.json add 'Выполнить лабораторную 1'
+Добавлена задача 1
+
+$ python main.py --file demo_tasks.json add 'Подготовить отчёт'
+Добавлена задача 2
+
+$ python main.py --file demo_tasks.json done 1
+Задача выполнена: 1
+
+$ python main.py --file demo_tasks.json list
+[x] 1: Выполнить лабораторную 1
+[ ] 2: Подготовить отчёт
+
+$ python -m unittest discover -v
+test_add_and_complete (test_tasks.TaskTests.test_add_and_complete) ... ok
+test_input_errors (test_tasks.TaskTests.test_input_errors) ... ok
+test_save_and_load (test_tasks.TaskTests.test_save_and_load) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+OK

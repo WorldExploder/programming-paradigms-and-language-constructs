@@ -1,0 +1,15 @@
+$ python main.py
+Прямоугольник: ширина=17, высота=17, цвет=синий, площадь=289.00
+Круг: радиус=17, цвет=зелёный, площадь=907.92
+Квадрат: сторона=17, цвет=красный, площадь=289.00
+Внешний пакет colorama вызван.
+
+$ python -m unittest discover -v
+test_areas_for_variant_17 (lab_python_oop.test_shapes.ShapeTests.test_areas_for_variant_17) ... ok
+test_color_and_invalid_size (lab_python_oop.test_shapes.ShapeTests.test_color_and_invalid_size) ... ok
+test_inheritance_and_abstract_class (lab_python_oop.test_shapes.ShapeTests.test_inheritance_and_abstract_class) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.000s
+
+OK

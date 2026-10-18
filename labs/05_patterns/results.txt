@@ -1,0 +1,39 @@
+$ python main.py
+Фабричный метод: # Отчёт
+Документ
+Обычная цена за 17 страниц: 85
+Студенческая цена: 51
+
+$ python -m unittest discover -v
+test_adapter_with_mock (test_patterns.PatternTests.test_adapter_with_mock) ... ok
+test_factory_method (test_patterns.PatternTests.test_factory_method) ... ok
+test_strategy (test_patterns.PatternTests.test_strategy) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+OK
+
+$ python -m behave --no-color
+USING RUNNER: behave.runner:Runner
+Feature: Printing documents # features/patterns.feature:1
+
+  Scenario: Create a Markdown document  # features/patterns.feature:2
+    Given a Markdown creator            # features/steps/pattern_steps.py:7
+    When I render the title Report      # features/steps/pattern_steps.py:12
+    Then the document is # Report       # features/steps/pattern_steps.py:17
+
+  Scenario: Send a document through the adapter  # features/patterns.feature:7
+    Given an adapted mock printer                # features/steps/pattern_steps.py:22
+    When I send Report to the adapter            # features/steps/pattern_steps.py:28
+    Then the old printer receives Report         # features/steps/pattern_steps.py:33
+
+  Scenario: Use a student pricing strategy  # features/patterns.feature:12
+    Given a student print order             # features/steps/pattern_steps.py:38
+    When I calculate the price of 17 pages  # features/steps/pattern_steps.py:43
+    Then the price is 51                    # features/steps/pattern_steps.py:48
+
+1 feature passed, 0 failed, 0 skipped
+3 scenarios passed, 0 failed, 0 skipped
+9 steps passed, 0 failed, 0 skipped
+Took 0min 0.002s

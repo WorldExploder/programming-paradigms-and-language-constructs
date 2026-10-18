@@ -1,0 +1,9 @@
+$ python main.py
+test_all_salary_aggregates (test_queries.QueryTests.test_all_salary_aggregates) ... ok
+test_many_to_many_filters_and_empty_orchestra (test_queries.QueryTests.test_many_to_many_filters_and_empty_orchestra) ... ok
+test_one_to_many_and_sorting (test_queries.QueryTests.test_one_to_many_and_sorting) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+OK

@@ -1,0 +1,22 @@
+$ python main.py --demo
+Пользователь: /start
+Бот: Привет! Выберите кнопку учебного бота.
+Пользователь: Лабораторные
+Бот: Темы: основы Python, ООП, функции, тесты и Telegram-боты.
+Пользователь: Вариант
+Бот: Номер варианта: 17.
+Пользователь: Помощь
+Бот: Нажмите кнопку. Команда /start показывает меню.
+Пользователь: ???
+Бот: Неизвестная команда. Выберите кнопку.
+Кнопки: [['Лабораторные', 'Вариант'], ['Помощь']]
+
+$ python -m unittest discover -v
+test_api_payload_with_mock (test_bot.BotTests.test_api_payload_with_mock) ... ok
+test_menu_has_buttons (test_bot.BotTests.test_menu_has_buttons) ... ok
+test_variant_and_unknown_message (test_bot.BotTests.test_variant_and_unknown_message) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.002s
+
+OK

@@ -1,0 +1,38 @@
+$ python main.py
+(1, -5, 4) -> [-2.0, -1.0, 1.0, 2.0]
+(1, 0, 1) -> []
+(1, -2, 1) -> [-1.0, 1.0]
+
+$ python -m unittest discover -v
+test_four_real_roots (test_equation.EquationTests.test_four_real_roots) ... ok
+test_no_real_roots (test_equation.EquationTests.test_no_real_roots) ... ok
+test_repeated_roots (test_equation.EquationTests.test_repeated_roots) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.000s
+
+OK
+
+$ python -m behave --no-color
+USING RUNNER: behave.runner:Runner
+Feature: Biquadratic equation # features/equation.feature:1
+
+  Scenario: Four real roots         # features/equation.feature:2
+    Given coefficients 1, -5, 4     # features/steps/equation_steps.py:5
+    When I solve the equation       # features/steps/equation_steps.py:10
+    Then the roots are -2, -1, 1, 2 # features/steps/equation_steps.py:15
+
+  Scenario: No real roots        # features/equation.feature:7
+    Given coefficients 1, 0, 1   # features/steps/equation_steps.py:5
+    When I solve the equation    # features/steps/equation_steps.py:10
+    Then there are no real roots # features/steps/equation_steps.py:20
+
+  Scenario: Repeated roots      # features/equation.feature:12
+    Given coefficients 1, -2, 1 # features/steps/equation_steps.py:5
+    When I solve the equation   # features/steps/equation_steps.py:10
+    Then the roots are -1, 1    # features/steps/equation_steps.py:15
+
+1 feature passed, 0 failed, 0 skipped
+3 scenarios passed, 0 failed, 0 skipped
+9 steps passed, 0 failed, 0 skipped
+Took 0min 0.001s

@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+*.session
+labs/03_functional/data_light.json
+homework/01_task_manager/tasks.json

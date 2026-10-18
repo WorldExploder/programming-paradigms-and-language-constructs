@@ -1,0 +1,147 @@
+
+--- labs/01_basics ---
+test_all_paradigms (test_equations.EquationTests.test_all_paradigms) ... ok
+test_invalid_argument_is_retried (test_equations.EquationTests.test_invalid_argument_is_retried) ... ok
+test_keyboard_and_finite_values (test_equations.EquationTests.test_keyboard_and_finite_values) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+OK
+Ошибка: введите конечное действительное число.
+Ошибка: введите конечное действительное число.
+Ошибка: введите конечное действительное число.
+Ошибка: введите конечное действительное число.
+
+--- labs/02_oop ---
+test_areas_for_variant_17 (lab_python_oop.test_shapes.ShapeTests.test_areas_for_variant_17) ... ok
+test_color_and_invalid_size (lab_python_oop.test_shapes.ShapeTests.test_color_and_invalid_size) ... ok
+test_inheritance_and_abstract_class (lab_python_oop.test_shapes.ShapeTests.test_inheritance_and_abstract_class) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.000s
+
+OK
+
+--- labs/03_functional ---
+test_decorator_returns_value_and_prints_dictionary (test_functional.FunctionalTests.test_decorator_returns_value_and_prints_dictionary) ... ok
+test_fields_skip_none_but_keep_zero (test_functional.FunctionalTests.test_fields_skip_none_but_keep_zero) ... ok
+test_processing_chain (test_functional.FunctionalTests.test_processing_chain) ... ok
+test_random_count_and_bounds (test_functional.FunctionalTests.test_random_count_and_bounds) ... ok
+test_timers_do_not_suppress_exception (test_functional.FunctionalTests.test_timers_do_not_suppress_exception) ... ok
+test_unique_keeps_original_case_and_accepts_generator (test_functional.FunctionalTests.test_unique_keeps_original_case_and_accepts_generator) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.000s
+
+OK
+
+--- labs/04_testing ---
+test_four_real_roots (test_equation.EquationTests.test_four_real_roots) ... ok
+test_no_real_roots (test_equation.EquationTests.test_no_real_roots) ... ok
+test_repeated_roots (test_equation.EquationTests.test_repeated_roots) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.000s
+
+OK
+
+--- labs/05_patterns ---
+test_adapter_with_mock (test_patterns.PatternTests.test_adapter_with_mock) ... ok
+test_factory_method (test_patterns.PatternTests.test_factory_method) ... ok
+test_strategy (test_patterns.PatternTests.test_strategy) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+OK
+
+--- labs/06_bot ---
+test_api_payload_with_mock (test_bot.BotTests.test_api_payload_with_mock) ... ok
+test_menu_has_buttons (test_bot.BotTests.test_menu_has_buttons) ... ok
+test_variant_and_unknown_message (test_bot.BotTests.test_variant_and_unknown_message) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.002s
+
+OK
+
+--- labs/07_fsm_bot ---
+test_empty_input_and_confirmation (test_bot.StateMachineTests.test_empty_input_and_confirmation) ... ok
+test_three_state_registration (test_bot.StateMachineTests.test_three_state_registration) ... ok
+test_users_are_independent_and_cancel_resets (test_bot.StateMachineTests.test_users_are_independent_and_cancel_resets) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.000s
+
+OK
+
+--- homework/01_task_manager ---
+test_add_and_complete (test_tasks.TaskTests.test_add_and_complete) ... ok
+test_input_errors (test_tasks.TaskTests.test_input_errors) ... ok
+test_save_and_load (test_tasks.TaskTests.test_save_and_load) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+OK
+
+--- assessments/rk_02 ---
+test_all_salary_aggregates (test_queries.QueryTests.test_all_salary_aggregates) ... ok
+test_many_to_many_filters_and_empty_orchestra (test_queries.QueryTests.test_many_to_many_filters_and_empty_orchestra) ... ok
+test_one_to_many_and_sorting (test_queries.QueryTests.test_one_to_many_and_sorting) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+OK
+
+--- BDD labs/04_testing ---
+USING RUNNER: behave.runner:Runner
+Feature: Biquadratic equation # features/equation.feature:1
+
+  Scenario: Four real roots         # features/equation.feature:2
+    Given coefficients 1, -5, 4     # features/steps/equation_steps.py:5
+    When I solve the equation       # features/steps/equation_steps.py:10
+    Then the roots are -2, -1, 1, 2 # features/steps/equation_steps.py:15
+
+  Scenario: No real roots        # features/equation.feature:7
+    Given coefficients 1, 0, 1   # features/steps/equation_steps.py:5
+    When I solve the equation    # features/steps/equation_steps.py:10
+    Then there are no real roots # features/steps/equation_steps.py:20
+
+  Scenario: Repeated roots      # features/equation.feature:12
+    Given coefficients 1, -2, 1 # features/steps/equation_steps.py:5
+    When I solve the equation   # features/steps/equation_steps.py:10
+    Then the roots are -1, 1    # features/steps/equation_steps.py:15
+
+1 feature passed, 0 failed, 0 skipped
+3 scenarios passed, 0 failed, 0 skipped
+9 steps passed, 0 failed, 0 skipped
+Took 0min 0.000s
+
+--- BDD labs/05_patterns ---
+USING RUNNER: behave.runner:Runner
+Feature: Printing documents # features/patterns.feature:1
+
+  Scenario: Create a Markdown document  # features/patterns.feature:2
+    Given a Markdown creator            # features/steps/pattern_steps.py:7
+    When I render the title Report      # features/steps/pattern_steps.py:12
+    Then the document is # Report       # features/steps/pattern_steps.py:17
+
+  Scenario: Send a document through the adapter  # features/patterns.feature:7
+    Given an adapted mock printer                # features/steps/pattern_steps.py:22
+    When I send Report to the adapter            # features/steps/pattern_steps.py:28
+    Then the old printer receives Report         # features/steps/pattern_steps.py:33
+
+  Scenario: Use a student pricing strategy  # features/patterns.feature:12
+    Given a student print order             # features/steps/pattern_steps.py:38
+    When I calculate the price of 17 pages  # features/steps/pattern_steps.py:43
+    Then the price is 51                    # features/steps/pattern_steps.py:48
+
+1 feature passed, 0 failed, 0 skipped
+3 scenarios passed, 0 failed, 0 skipped
+9 steps passed, 0 failed, 0 skipped
+Took 0min 0.001s
+
+Все проверки пройдены.

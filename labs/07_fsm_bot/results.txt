@@ -1,0 +1,23 @@
+$ python main.py --demo
+Пользователь: /start
+Бот: Введите имя. /cancel начинает ввод заново.
+Состояние: NAME
+Пользователь: Анна
+Бот: Введите группу, например ИУ5-31Б.
+Состояние: GROUP
+Пользователь: ИУ5-31Б
+Бот: Имя: Анна; группа: ИУ5-31Б. Всё верно?
+Состояние: CONFIRM
+Пользователь: Да
+Бот: Запись принята: Анна, ИУ5-31Б. Можно ввести новое имя.
+Состояние: NAME
+
+$ python -m unittest discover -v
+test_empty_input_and_confirmation (test_bot.StateMachineTests.test_empty_input_and_confirmation) ... ok
+test_three_state_registration (test_bot.StateMachineTests.test_three_state_registration) ... ok
+test_users_are_independent_and_cancel_resets (test_bot.StateMachineTests.test_users_are_independent_and_cancel_resets) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.000s
+
+OK
